@@ -15,7 +15,9 @@ import com.jpa.hibernate.util.jsf.FacesUtil;
 @Named
 @ViewScoped
 public class CadastroFabricanteBean implements Serializable {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private CadastroFabricanteService cadastroFabricanteService; 
 	private Fabricante fabricante;
@@ -55,6 +57,4 @@ public class CadastroFabricanteBean implements Serializable {
 	public void setFabricante(Fabricante fabricante) {
 		this.fabricante = fabricante;
 	}
-	
-	
 }
