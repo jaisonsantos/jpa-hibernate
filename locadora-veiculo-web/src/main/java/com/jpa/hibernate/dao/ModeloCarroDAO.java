@@ -12,6 +12,8 @@ import com.jpa.hibernate.util.jpa.Transactional;
 
 public class ModeloCarroDAO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private EntityManager em;
 	

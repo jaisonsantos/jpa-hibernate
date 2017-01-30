@@ -1,6 +1,7 @@
 package com.jpa.hibernate.controller;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.jpa.hibernate.dao.FabricanteDAO;
+import com.jpa.hibernate.model.Categoria;
 import com.jpa.hibernate.model.Fabricante;
 import com.jpa.hibernate.model.ModeloCarro;
 import com.jpa.hibernate.service.CadastroModeloCarroService;
@@ -23,6 +25,7 @@ public class CadastroModeloCarroBean implements Serializable {
 	
 	private ModeloCarro modeloCarro;
 	private List<Fabricante> fabricantes;
+	private List<Categoria> categorias;
 	
 	@Inject
 	private CadastroModeloCarroService cadastroModeloCarroService; 
@@ -35,6 +38,7 @@ public class CadastroModeloCarroBean implements Serializable {
 	public void inicializar(){
 		this.limpar();
 		this.fabricantes = fabricanteDAO.buscarTodos();
+		this.categorias = Arrays.asList(Categoria.values());
 	}
 
 	public void salvar(){
@@ -74,5 +78,9 @@ public class CadastroModeloCarroBean implements Serializable {
 
 	public void setCadastroModeloCarroService(CadastroModeloCarroService cadastroModeloCarroService) {
 		this.cadastroModeloCarroService = cadastroModeloCarroService;
+	}
+
+	public List<Categoria> getCategorias() {
+		return categorias;
 	}
 }

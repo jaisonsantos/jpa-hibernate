@@ -29,7 +29,7 @@ public class Aluguel {
 	@JoinColumn(name="codigo_apolice_seguro")
 	private ApoliceSeguro apoliceSeguro;
 	@Temporal(TemporalType.DATE)
-	private Calendar pedido;
+	private Calendar dataPedido;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataEntrega;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -67,12 +67,12 @@ public class Aluguel {
 		this.apoliceSeguro = apoliceSeguro;
 	}
 
-	public Calendar getPedido() {
-		return pedido;
+	public Calendar getDataPedido() {
+		return dataPedido;
 	}
 
-	public void setPedido(Calendar pedido) {
-		this.pedido = pedido;
+	public void setDataPedido(Calendar dataPedido) {
+		this.dataPedido = dataPedido;
 	}
 
 	public Date getDataEntrega() {

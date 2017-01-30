@@ -1,6 +1,7 @@
 package com.jpa.hibernate.service;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.inject.Inject;
 
@@ -20,7 +21,9 @@ public class CadastroAluguelService implements Serializable {
 		if (aluguel.getCarro() == null) {
 			throw new NegocioException("Carro é obrigatório!");
 		}
-
+		
+		aluguel.setDataPedido(Calendar.getInstance());
+		
 		this.aluguelDAO.salvar(aluguel);
 	}
 }

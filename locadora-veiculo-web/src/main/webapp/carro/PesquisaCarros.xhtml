@@ -64,7 +64,7 @@
 	        	<p:button value="Não" onclick="confirmacaoExclusao.hide(); return false;" />
 	    	</p:confirmDialog>
 	    	
-	    	<p:dialog id="mostraAcessoriosDialog" header="Acessórios" widgetVar="mostraAcessorios" modal="true">
+	    	<p:dialog id="mostraAcessoriosDialog" header="Acessórios" widgetVar="mostraAcessorios" width="200" modal="true">
     			<p:dataList value="#{pesquisaCarroBean.carroSelecionado.acessorios}" var="acessorio" itemType="disc"
     					rendered="#{not empty pesquisaCarroBean.carroSelecionado.acessorios}">
     				#{acessorio.descricao}
